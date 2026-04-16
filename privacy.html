@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Safety — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    color: #1C2833;
+    line-height: 1.6;
+    background: #F5F7FA;
+  }
+  h1 { font-size: 32px; margin-bottom: 8px; color: #0B1D3A; }
+  h2 { font-size: 22px; margin-top: 36px; color: #0B1D3A; border-bottom: 2px solid #0E7C6B; padding-bottom: 6px; }
+  h3 { font-size: 17px; margin-top: 24px; color: #0E7C6B; }
+  p, ul { font-size: 15px; }
+  ul { padding-left: 24px; }
+  li { margin: 6px 0; }
+  .meta { color: #6B7B8D; font-size: 14px; margin-bottom: 30px; }
+  .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  a { color: #0E7C6B; }
+  code { background: #F0F2F5; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .highlight { background: #FFF8E1; padding: 12px 16px; border-left: 4px solid #D4740E; margin: 16px 0; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #E2E8F0; }
+  th { background: #F0F2F5; font-weight: 600; }
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #E2E8F0; font-size: 13px; color: #6B7B8D; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Privacy Policy</h1>
+<p class="meta"><strong>Aura Safety</strong> by First-24 Health LLC<br>
+Effective date: April 16, 2026<br>
+Last updated: April 16, 2026</p>
+
+<p>First-24 Health LLC ("we", "our", "us") operates the Aura Safety mobile application ("the App"). This Privacy Policy describes how we collect, use, and protect information when you use Aura Safety.</p>
+
+<div class="highlight">
+<strong>Privacy-first design:</strong> Aura Safety processes your biological signature entirely on your device. Raw biometric data (motion, tremor, cardiac patterns) never leaves your phone. Only signed verification results — not the underlying biometric data — are transmitted.
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Information you provide directly</h3>
+<ul>
+<li><strong>Account data:</strong> name, email address, sign-in method (Apple ID, Google account, or magic link)</li>
+<li><strong>Profile information:</strong> display name, optional phone number</li>
+<li><strong>Family member contacts:</strong> names, phone numbers, relationships of family members you add</li>
+<li><strong>Emergency contacts:</strong> names, phone numbers, emails of contacts you designate</li>
+<li><strong>Meeting labels:</strong> optional text labels you assign to group verifications</li>
+</ul>
+
+<h3>1.2 Information collected automatically</h3>
+<ul>
+<li><strong>Motion sensor data</strong> (accelerometer + gyroscope): used on-device to compute your unique biological signature. <strong>Raw motion data is never transmitted.</strong></li>
+<li><strong>Location data</strong> (GPS): captured during ride monitoring, emergency SOS, and proximity verification. Shared only with your designated emergency contacts during active emergency events.</li>
+<li><strong>Bluetooth and UWB ranging data:</strong> used for in-person family verification; processed on-device.</li>
+<li><strong>Camera access:</strong> used only when scanning QR codes during proximity verification.</li>
+<li><strong>Microphone access:</strong> used only when capturing audio evidence during duress events you initiate.</li>
+<li><strong>Device identifiers:</strong> anonymous device ID for sync across your own devices, push notification tokens (FCM).</li>
+<li><strong>Crash and diagnostic data:</strong> automatically reported via Sentry when the app crashes, helping us fix bugs.</li>
+<li><strong>Usage analytics:</strong> anonymous app usage events via PostHog (which screens you visit, feature usage). Does not include biometric or location data.</li>
+</ul>
+
+<h3>1.3 Information we do NOT collect</h3>
+<ul>
+<li>We do not collect or store your raw biometric data (tremor patterns, cardiac micro-motion, or fingerprints) on our servers.</li>
+<li>We do not access your contacts, photos, calendar, or files outside what is explicitly required for safety features and granted by you.</li>
+<li>We do not collect health records or medical data. Aura Safety is not a medical device.</li>
+<li>We do not sell your personal information to third parties.</li>
+</ul>
+
+<h2>2. How We Use Information</h2>
+
+<table>
+<tr><th>Purpose</th><th>Data used</th></tr>
+<tr><td>Verify your identity for account access</td><td>Email, sign-in tokens (Apple/Google)</td></tr>
+<tr><td>Compute biological identity signature</td><td>Motion sensor data (on-device only)</td></tr>
+<tr><td>Detect duress and dispatch silent SOS</td><td>Motion data, location, emergency contacts</td></tr>
+<tr><td>Verify family member identity (Kin)</td><td>Verification results between enrolled family devices</td></tr>
+<tr><td>Monitor rideshare safety</td><td>Location, optional driver/vehicle info you enter</td></tr>
+<tr><td>Generate proximity meeting receipts</td><td>Bluetooth/UWB ranging data, biological verification results</td></tr>
+<tr><td>Process subscription payments</td><td>Apple App Store / Google Play purchase tokens (via RevenueCat)</td></tr>
+<tr><td>Send push notifications</td><td>Device push tokens (FCM)</td></tr>
+<tr><td>Improve the app</td><td>Anonymous usage analytics (PostHog), crash reports (Sentry)</td></tr>
+</table>
+
+<h2>3. Data Storage and Security</h2>
+<ul>
+<li><strong>On-device storage:</strong> baseline signatures, attestation records, evidence captures, family member info, and emergency contacts are stored locally in encrypted SQLite databases.</li>
+<li><strong>Cloud storage:</strong> account information and synced records are stored on Supabase (PostgreSQL) with Row-Level Security ensuring you can only access your own data.</li>
+<li><strong>Encryption:</strong> all data in transit is encrypted with TLS 1.2+. Sensitive cloud-stored data uses AES-256 encryption at rest.</li>
+<li><strong>Cryptographic signing:</strong> evidence captures are HMAC-SHA256 signed and hash-chained for tamper-evidence.</li>
+<li><strong>Hardware-rooted security:</strong> on iOS, signing operations use the Secure Enclave; on Android, hardware-backed Keystore where available.</li>
+</ul>
+
+<h2>4. Third-Party Services</h2>
+<p>We use the following third-party services to operate Aura Safety. Each has their own privacy policy:</p>
+<table>
+<tr><th>Service</th><th>Purpose</th><th>Privacy policy</th></tr>
+<tr><td>Supabase</td><td>Authentication and cloud database</td><td><a href="https://supabase.com/privacy">supabase.com/privacy</a></td></tr>
+<tr><td>RevenueCat</td><td>Subscription management</td><td><a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></td></tr>
+<tr><td>Firebase Cloud Messaging</td><td>Push notifications</td><td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td></tr>
+<tr><td>Sentry</td><td>Crash reporting</td><td><a href="https://sentry.io/privacy/">sentry.io/privacy</a></td></tr>
+<tr><td>PostHog</td><td>Anonymous analytics</td><td><a href="https://posthog.com/privacy">posthog.com/privacy</a></td></tr>
+<tr><td>Sign in with Apple</td><td>Authentication</td><td><a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td></tr>
+<tr><td>Google Sign-In</td><td>Authentication</td><td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr>
+</table>
+
+<h2>5. Sharing Your Information</h2>
+<p>We share your information only in these limited circumstances:</p>
+<ul>
+<li><strong>With your family members</strong> you have explicitly added (verification status, location during emergencies)</li>
+<li><strong>With your emergency contacts</strong> you have designated (location and status during active SOS events)</li>
+<li><strong>With service providers</strong> listed in Section 4, only as needed to operate the app</li>
+<li><strong>To comply with law</strong> when legally required by valid legal process</li>
+<li><strong>To protect safety</strong> if we reasonably believe disclosure is necessary to prevent imminent harm</li>
+</ul>
+<p>We do not sell your personal information.</p>
+
+<h2>6. Your Rights</h2>
+
+<h3>6.1 Access and portability</h3>
+<p>You can export all your data from Settings → Data → Export My Data. The export is a JSON file containing all records associated with your account.</p>
+
+<h3>6.2 Deletion</h3>
+<p>You can delete your account and all associated data from Settings → Account → Delete Account & Data. Deletion is permanent and processed within 30 days.</p>
+
+<h3>6.3 Opt-out</h3>
+<ul>
+<li>Disable analytics: Settings → Privacy → Analytics</li>
+<li>Disable crash reporting: Settings → Privacy → Crash Reporting</li>
+<li>Disable continuous attestation: Settings → Safety → Continuous Attestation</li>
+<li>Disable location services: device Settings → Privacy → Location Services</li>
+</ul>
+
+<h3>6.4 GDPR rights (EU residents)</h3>
+<p>If you are in the European Union, you have additional rights including: right to access, rectify, erase, restrict processing, object to processing, and data portability. Contact us at <a href="mailto:privacy@first24health.com">privacy@first24health.com</a> to exercise these rights.</p>
+
+<h3>6.5 CCPA rights (California residents)</h3>
+<p>California residents have the right to know what personal information we collect, the right to delete, and the right to opt out of sale (we do not sell information). Contact <a href="mailto:privacy@first24health.com">privacy@first24health.com</a>.</p>
+
+<h2>7. Children's Privacy</h2>
+<p>Aura Safety is not directed to children under 13. We do not knowingly collect information from children under 13. Parents may add children as family members within the Kin module; in that case, the parent is responsible for the child's data and consent.</p>
+
+<h2>8. International Users</h2>
+<p>Aura Safety is operated from the United States. By using the app, you consent to the transfer of your information to the United States, which may have different data protection laws than your country.</p>
+
+<h2>9. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Material changes will be communicated through the app and via email. Your continued use after changes constitutes acceptance of the updated policy.</p>
+
+<h2>10. Contact Us</h2>
+<p>Questions about this Privacy Policy or your data:</p>
+<ul>
+<li>Email: <a href="mailto:privacy@first24health.com">privacy@first24health.com</a></li>
+<li>Mail: First-24 Health LLC, [Mailing address]</li>
+</ul>
+
+<h2>11. Medical Device Disclaimer</h2>
+<p>Aura Safety is a personal safety platform. It is <strong>not</strong> a medical device. It does not diagnose, treat, cure, or prevent any disease. The biological signature analysis is solely for identity verification and duress detection — it is not a substitute for medical evaluation.</p>
+
+<div class="footer">
+© 2026 First-24 Health LLC. All rights reserved.<br>
+<a href="terms.html">Terms of Service</a> · <a href="index.html">Home</a>
+</div>
+</div>
+</body>
+</html>
